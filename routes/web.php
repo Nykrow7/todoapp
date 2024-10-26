@@ -1,18 +1,12 @@
 <?php
-
+use App\Http\Controllers\TodoController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+// Route for home page, using the 'home' method from TodoController
+Route::get('/', [TodoController::class, 'home'])->name('home');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route for about page
+Route::get('/about', [TodoController::class, 'about'])->name('about');
+
+// Route for contact page
+Route::get('/contact', [TodoController::class, 'contact'])->name('contact');
